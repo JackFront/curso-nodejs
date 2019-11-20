@@ -5,12 +5,28 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Portal de notícias</title>
+	<title>Noticia</title>
 </head>
 
 <body>
 
-	<h1>Notícia</h1>
+	<h1>Noticia</h1>
+
+	<table>
+		<tr>
+			<td>ID</td>
+			<td>Título</td>
+			<td>Noticia</td>
+
+		</tr>
+
+		<tr>
+			<td><%= noticia[0].id_noticias %></td>
+			<td><%= noticia[0].titulo %></td>
+			<td><%= noticia[0].noticia %></td>
+		</tr>
+
+	</table>
 
 </body>
 
