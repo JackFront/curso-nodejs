@@ -2,8 +2,8 @@ module.exports = (app) => {
     app.get('/noticia', (req, res) => {
 
         var connection = app.config.dbConnection()
-        var noticiaModel = app.app.models.noticiasModel;
-        noticiaModel.getNoticia(connection, (error, result) => {
+        var noticiaModel = new app.app.models.noticiasModel(connection);
+        noticiaModel.getNoticia((error, result) => {
             res.render("noticias/noticia", {
                 noticia: result
             })

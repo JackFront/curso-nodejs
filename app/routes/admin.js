@@ -6,9 +6,9 @@ module.exports = (app) => {
         var noticia = req.body;
 
         var connection = app.config.dbConnection()
-        var noticiaModel = app.app.models.noticiasModel;
+        var noticiaModel = new app.app.models.noticiasModel(connection);
 
-        noticiaModel.salvarNoticia(noticia, connection, (error, result) => {
+        noticiaModel.salvarNoticia(noticia, (error, result) => {
             res.redirect('/noticias');
         })
     })
