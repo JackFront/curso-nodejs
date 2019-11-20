@@ -5,10 +5,12 @@ module.exports = (app) => {
 
 
         var connection = app.config.dbConnection()
-        connection.query('SELECT * FROM noticias', (error, result) => {
+        var noticiasModel = app.app.models.noticiasModel;
+
+        noticiasModel.getNoticias(connection, (error, result) => {
             res.render("noticias/noticias", {
                 noticias: result
             })
-        })
+        });
     })
 }
