@@ -12,6 +12,6 @@ app.use(bodyParser.urlencoded({
 
 app.use(expressValidator());
 
-consign().include('app/routes').then('config/dbConnection.js').then('app/models').into(app)
+consign().include('app/routes').then('config/dbConnection.js').then('app/models').then('app/controllers').into(app)
 
 module.exports = app

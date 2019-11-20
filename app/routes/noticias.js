@@ -2,15 +2,13 @@ module.exports = (app) => {
 
 
     app.get('/noticias', (req, res) => {
+        app.app.controllers.noticias.noticias(app, req, res)
 
+    })
 
-        var connection = app.config.dbConnection()
-        var noticiasModel = new app.app.models.noticiasModel(connection);
+    app.get('/noticia', (req, res) => {
 
-        noticiasModel.getNoticias((error, result) => {
-            res.render("noticias/noticias", {
-                noticias: result
-            })
-        });
+        app.app.controllers.noticias.noticia(app, req, res)
+
     })
 }
